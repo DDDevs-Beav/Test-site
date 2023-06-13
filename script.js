@@ -16,23 +16,28 @@ document.addEventListener('DOMContentLoaded', function() {
   var searchResults = document.getElementById('search-results');
   var suggestionList = document.getElementById('suggestion-list');
 
-  // Search input keyup event handler
-  searchInput.addEventListener('keyup', function(event) {
-    var keyword = searchInput.value.trim();
-    if (keyword.length > 0) {
-      var matchingPages = getMatchingPages(keyword);
-      showSuggestions(matchingPages);
-    } else {
-      hideSuggestions();
+  // Search input input event handler
+searchInput.addEventListener('input', function(event) {
+  var keyword = searchInput.value.trim();
+  if (keyword.length > 0) {
+    var matchingPages = getMatchingPages(keyword);
+    showSuggestions(matchingPages);
+  } else {
+    hideSuggestions();
+  }
+});
+
+// Search input keydown event handler
+searchInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    var firstSuggestion = suggestionList.querySelector('.search-suggestion');
+    if (firstSuggestion) {
+      window.location.href = firstSuggestion.dataset.url;
     }
-    
-    if (event.key === 'Enter') {
-      var firstSuggestion = suggestionList.querySelector('.search-suggestion');
-      if (firstSuggestion) {
-        window.location.href = firstSuggestion.dataset.url;
-      }
-    }
-  });
+  }
+});
+
+
 
   // Search button click event handler
   searchButton.addEventListener('click', function() {
@@ -94,3 +99,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
