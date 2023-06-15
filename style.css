@@ -5,14 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Body styles */
-body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.5;
-  background: linear-gradient(to right, #333333, #0733ac);
-  color: #ffffff;
-  font-size: 24px;
-}
+
 
 /* Main styles */
 main {
@@ -247,6 +240,43 @@ a {
   /* Additional styles if desired */
 }
 p a {
+  color: #ffffff;
+}
+
+/* Social Button Styles */
+.content {
+  flex: 1 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.socials {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.socials p {
+  margin-bottom: 1rem;
+}
+
+.socials a {
+  display: inline-block;
+  background-color: #0733ac;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.socials a:hover {
+  background-color: #71aad8;
   color: #ffffff;
 }
 
